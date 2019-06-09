@@ -1,11 +1,3 @@
-<<<<<<< HEAD
----
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
----
-=======
 # ownCloud 9.0 Server Quick Start Linux Installation 
 
 ## System Requirements
@@ -102,4 +94,3 @@ Detailed information on user accounts can be found in the ownCloud [User Configu
 
 - When accessing the ownCloud site via a mobile device users will be presented with the option to download either the Android or iOS application  
 
->>>>>>> 46c7e80473f710f3d70867872cc1dd47243886b3
