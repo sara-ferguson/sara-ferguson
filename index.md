@@ -1,12 +1,8 @@
-<<<<<<< HEAD
----
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+# ownCloud Server 9.0 Quick Start Linux Installation Guide
 
-layout: home
----
-=======
-# ownCloud 9.0 Server Quick Start Linux Installation 
+ownCloud is open source file sync and share software. It is available in both free and enterprise level editions. 
+
+This guide is intended to be used as a supplement to the official ownCloud documentation. For access to all of the documentation please access the [Administration Manual](https://doc.owncloud.org/server/9.0/admin_manual/contents.html).
 
 ## System Requirements
 
@@ -18,6 +14,10 @@ layout: home
 - CentOS 7  
 - SLES 12  
 - openSUSE 13.2, Leap 42.1  
+
+### Memory
+
+- ownCloud requires at least 128MB RAM, but it is recommended to have at least 512MB RAM.
 
 ### Database 
 
@@ -68,33 +68,31 @@ Follow the instructions on the installation pages then proceed with the Installa
 
 1.) In a browser navigate to [http://localhost/owncloud](http://localhost/owncloud)  
 2.) Create the administrator account by entering any desired username and password  
-3.) Click **Finish Setup**  
+3.) Click `Finish Setup`
 
-Database settings can now be configured. See the ownCloud [installation documentation](https://doc.owncloud.org/server/9.0/admin_manual/installation/installation_wizard.html#data-directory-location) for more information.  
+**Note:** Database settings should now be configured. See the ownCloud [installation documentation](https://doc.owncloud.org/server/9.0/admin_manual/installation/installation_wizard.html#data-directory-location) for more information.  
 
-## Configuring ownCloud
-
-
+## Common Configuration 
 
 1.) Configure ownCloud to listen on the server's IP address and a custom port (in this instance 8080).  
 
-- In the `config.php` file locate the `'dbname'` parameter   
-- Change `'owncloud'` to the IP address and port   
+- In the `config.php` file locate the `'dbname'` parameter  
+- Change `'owncloud'` to the IP address and port  
 
 		'dbname' => '192.168.0.2:8080'  
 
-More configuration options are available in the ownCloud [Config.php Parameters](https://doc.owncloud.org/server/9.0/admin_manual/configuration_server/config_sample_php_parameters.html) documentation.   
+More configuration options are available in the ownCloud [Config.php Parameters](https://doc.owncloud.org/server/9.0/admin_manual/configuration_server/config_sample_php_parameters.html) documentation.  
 
 2.) Create user accounts  
 
 - Login to ownCloud  
 - Navigate to the User Management page  
 - Click in the `username` box at the top of the page  
-- Add the desired username and password   
+- Add the desired username and password  
 - Add the user to a group if desired  
-- If **Send email to new user** was selected in the control panel an email address may also be specified. ownCloud will send an email notification with the new login information.   
+- If `Send email to new user` was selected in the control panel an email address may also be specified. ownCloud will send an email notification to the user with the new login information.  
 
-Detailed information on user accounts can be found in the ownCloud [User Configuration manual](https://doc.owncloud.org/server/9.0/admin_manual/configuration_user/user_configuration.html).  
+Detailed information on user accounts can be found in the ownCloud [User Configuration manual](https://doc.owncloud.org/server/9.0/admin_manual/configuration_user/).  
 
 3.) Connect to the ownCloud server using a desktop or mobile client  
 
@@ -102,4 +100,3 @@ Detailed information on user accounts can be found in the ownCloud [User Configu
 
 - When accessing the ownCloud site via a mobile device users will be presented with the option to download either the Android or iOS application  
 
->>>>>>> 46c7e80473f710f3d70867872cc1dd47243886b3
