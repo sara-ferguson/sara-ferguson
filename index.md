@@ -1,117 +1,102 @@
-<h1>ownCloud 9.0 Server Quick Start Linux Installation</h1>
+# ownCloud Server 9.0 Quick Start Linux Installation Guide
 
-<h2>System Requirements</h2>
+ownCloud is open source file sync and share software. It is available in both free and enterprise level editions. 
 
-<h3>Operating System</h3>
+This guide is intended to be used as a supplement to the official ownCloud documentation. For access to all of the documentation please access the [Administration Manual](https://doc.owncloud.org/server/9.0/admin_manual/contents.html).
 
-<ul>
-<li>Ubuntu 14.04, 16.04  </li>
-<li>Debian 8  </li>
-<li>RHEL 7  </li>
-<li>CentOS 7  </li>
-<li>SLES 12  </li>
-<li>openSUSE 13.2, Leap 42.1  </li>
-</ul>
+## System Requirements
 
-<h3>Database</h3>
+### Operating System
 
-<ul>
-<li>MySql or MariaDB 5.5+*  </li>
-<li>Oracle 11g  </li>
-<li>PostgresSQL 9  </li>
-<li>SQLite  </li>
-</ul>
+- Ubuntu 14.04, 16.04  
+- Debian 8  
+- RHEL 7  
+- CentOS 7  
+- SLES 12  
+- openSUSE 13.2, Leap 42.1  
 
-<p><code>*</code><em>It is currently required to disable Binary Logging when using MySQL/MariaDB</em></p>
+### Memory
 
-<h3>Webserver</h3>
+- ownCloud requires at least 128MB RAM, but it is recommended to have at least 512MB RAM.
 
-<ul>
-<li>Apache 2.4 with <code>prefork</code> and <code>mod_php</code>  </li>
-</ul>
+### Database 
 
-<h3>PHP Runtime</h3>
+* MySql or MariaDB 5.5+*  
+* Oracle 11g  
+* PostgresSQL 9  
+* SQLite  
 
-<ul>
-<li>PHP Runtime 5.6  </li>
-<li>PHP Runtime 7.0  </li>
-<li>PHP Runtime 7.1  </li>
-<li>PHP Runtime 7.2  </li>
-</ul>
+``*``*It is currently required to disable Binary Logging when using MySQL/MariaDB*
 
-<h3>Mobile</h3>
+### Webserver 
 
-<ul>
-<li>iOS 9.0+  </li>
-<li>Android 4.0+  </li>
-</ul>
+* Apache 2.4 with `prefork` and `mod_php`  
 
-<h3>Browser</h3>
+### PHP Runtime
 
-<ul>
-<li>IE11+ (except Compatibility Mode)</li>
-<li>Firefox 14+  </li>
-<li>Chrome 18+  </li>
-<li>Safari 5+  </li>
-</ul>
+* PHP Runtime 5.6  
+* PHP Runtime 7.0  
+* PHP Runtime 7.1  
+* PHP Runtime 7.2  
 
-<h2>Repository Options</h2>
+### Mobile
 
-<ul>
-<li><a href="https://download.owncloud.org/download/repositories/stable/owncloud/">Stable</a> will track the current stable ownCloud version  </li>
-<li><a href="https://download.owncloud.org/download/repositories/9.0/owncloud/">Major releases</a> can be specified   </li>
-</ul>
+* iOS 9.0+  
+* Android 4.0+  
 
-<p>Follow the instructions on the installation pages then proceed with the Installation Wizard.  </p>
+### Browser
 
-<h2>Downgrading Not Supported</h2>
+- IE11+ (except Compatibility Mode)
+- Firefox 14+  
+* Chrome 18+  
+* Safari 5+  
 
-<ul>
-<li>Due to the risk of data corruption only fresh installations of older versions is supported. Data then can be restored from backup.  </li>
-</ul>
+## Repository Options
 
-<h2>Installation Wizard</h2>
+- [Stable](https://download.owncloud.org/download/repositories/stable/owncloud/) will track the current stable ownCloud version  
+- [Major releases](https://download.owncloud.org/download/repositories/9.0/owncloud/) can be specified   
 
-<ul>
-<li>Once all steps on the installation pages are complete and all files are installed the Installation Wizard should be run  </li>
-</ul>
+Follow the instructions on the installation pages then proceed with the Installation Wizard.  
 
-<p>1.) In a browser navigate to <a href="http://localhost/owncloud">http://localhost/owncloud</a> <br />
-2.) Create the administrator account by entering any desired username and password <br />
-3.) Click <strong>Finish Setup</strong>  </p>
+## Downgrading Not Supported
 
-<p>Database settings can now be configured. See the ownCloud <a href="https://doc.owncloud.org/server/9.0/admin_manual/installation/installation_wizard.html#data-directory-location">installation documentation</a> for more information.  </p>
+- Due to the risk of data corruption only fresh installations of older versions is supported. Data then can be restored from backup.  
 
-<h2>Configuring ownCloud</h2>
+## Installation Wizard
 
-<p>1.) Configure ownCloud to listen on the server's IP address and a custom port (in this instance 8080).  </p>
+- Once all steps on the installation pages are complete and all files are installed the Installation Wizard should be run  
 
-<ul>
-<li>In the <code>config.php</code> file locate the <code>'dbname'</code> parameter   </li>
-<li><p>Change <code>'owncloud'</code> to the IP address and port   </p>
+1.) In a browser navigate to [http://localhost/owncloud](http://localhost/owncloud)  
+2.) Create the administrator account by entering any desired username and password  
+3.) Click `Finish Setup`
 
-<pre><code>'dbname' =&gt; '192.168.0.2:8080'
-</code></pre></li>
-</ul>
+**Note:** Database settings should now be configured. See the ownCloud [installation documentation](https://doc.owncloud.org/server/9.0/admin_manual/installation/installation_wizard.html#data-directory-location) for more information.  
 
-<p>More configuration options are available in the ownCloud <a href="https://doc.owncloud.org/server/9.0/admin_manual/configuration_server/config_sample_php_parameters.html">Config.php Parameters</a> documentation.   </p>
+## Common Configuration 
 
-<p>2.) Create user accounts  </p>
+1.) Configure ownCloud to listen on the server's IP address and a custom port (in this instance 8080).  
 
-<ul>
-<li>Login to ownCloud  </li>
-<li>Navigate to the User Management page  </li>
-<li>Click in the <code>username</code> box at the top of the page  </li>
-<li>Add the desired username and password   </li>
-<li>Add the user to a group if desired  </li>
-<li>If <strong>Send email to new user</strong> was selected in the control panel an email address may also be specified. ownCloud will send an email notification with the new login information.   </li>
-</ul>
+- In the `config.php` file locate the `'dbname'` parameter  
+- Change `'owncloud'` to the IP address and port  
 
-<p>Detailed information on user accounts can be found in the ownCloud <a href="https://doc.owncloud.org/server/9.0/admin_manual/configuration_user/user_configuration.html">User Configuration manual</a>.  </p>
+		'dbname' => '192.168.0.2:8080'  
 
-<p>3.) Connect to the ownCloud server using a desktop or mobile client  </p>
+More configuration options are available in the ownCloud [Config.php Parameters](https://doc.owncloud.org/server/9.0/admin_manual/configuration_server/config_sample_php_parameters.html) documentation.  
 
-<ul>
-<li><p>To access from a desktop client users can use any of the supported browsers to navigate to the specified <code>dbname</code>. In this example <a href="http://192.168.0.2:8080">http://192.168.0.2:8080</a>.  </p></li>
-<li><p>When accessing the ownCloud site via a mobile device users will be presented with the option to download either the Android or iOS application  </p></li>
-</ul>
+2.) Create user accounts  
+
+- Login to ownCloud  
+- Navigate to the User Management page  
+- Click in the `username` box at the top of the page  
+- Add the desired username and password  
+- Add the user to a group if desired  
+- If `Send email to new user` was selected in the control panel an email address may also be specified. ownCloud will send an email notification to the user with the new login information.  
+
+Detailed information on user accounts can be found in the ownCloud [User Configuration manual](https://doc.owncloud.org/server/9.0/admin_manual/configuration_user/).  
+
+3.) Connect to the ownCloud server using a desktop or mobile client  
+
+- To access from a desktop client users can use any of the supported browsers to navigate to the specified `dbname`. In this example [http://192.168.0.2:8080](http://192.168.0.2:8080).  
+
+- When accessing the ownCloud site via a mobile device users will be presented with the option to download either the Android or iOS application  
+
